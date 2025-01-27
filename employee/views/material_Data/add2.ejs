@@ -1,0 +1,91 @@
+<div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Customer</h1>
+  <div class="btn-toolbar mb-2 mb-md 0">
+    <div class="btn-group me-2">
+      <button class="btn btn-sm btn-outline-secondary">?</button>
+    </div>
+  </div>
+</div>
+
+<div class="col py-3">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+          <li class="breadcrumb-item active">New Material</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col text-end fw-lighter">
+      <b>UserId</b>
+    </div>
+  </div>
+
+</div>
+
+
+<form action="/add2" method="POST">
+
+
+ <div class="row form-group mb-4">
+    <div class="col">
+      <label for="SiteNumber1">Site Number</label>
+      <input type="text" class="form-control" id="SiteNumber1" name="SiteNumber1" value="" placeholder="Site number" required>
+    </div>
+
+  </div>
+  <div class="row form-group mb-4">
+
+    <div class="col">
+      <label for="Material">material</label>
+      <input type="text" class="form-control" id="Material" name="Material" value="" placeholder="material" required>
+    </div>
+
+    <div class="col">
+      <label for="TruckNo1">truck no</label>
+      <input type="text" class="form-control" id="TruckNo1" name="TruckNo1" value="" placeholder="Truck number" required>
+    </div>
+
+  </div>
+
+   <div class="row form-group mb-4">
+
+    <div class="col">
+      <label for="Quantity">material Quantity</label>
+      <input type="text" class="form-control" id="Quantity" name="Quantity" value="" placeholder=" material Quantity" required>
+    </div>
+
+    <div class="col">
+      <label for="details">Deatils</label>
+      <input type="text" class="form-control" id="details" name="details" value="" placeholder="Deatails" required>
+    </div>
+
+  </div>
+
+   <div class="row form-group mb-4">
+      <label for="Cost">Cost</label>
+      <input type="text" class="form-control" id="Cost" name="Cost" value="" placeholder="Cost" required>
+    </div>
+
+
+   <div class="row form-group mb-4">
+      <label for="DealerName">Dealer name</label>
+      <input type="text" class="form-control" id="DealerNname" name="DealerName" value="" placeholder="Dealer name" required>
+    </div>
+
+     <div class="row form-group mb-4">
+      <label for="Sitemanager1">Sitemanger name</label>
+      <input type="text" class="form-control" id="SiteManger1" name="SiteManger1" value="" placeholder="Sitemanager name" required>
+    </div>
+  
+
+     <div class="form-group mb-4">
+       <button type="submit" class="btn btn-primary">Add Customer</button>
+     </div>
+  </div>
+
+</div>
+  
+
+</form>

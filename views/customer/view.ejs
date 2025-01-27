@@ -1,0 +1,83 @@
+<div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2"><%= sites.SiteName  %></h1>
+  <div class="btn-toolbar mb-2 mb-md 0">
+   
+  </div>
+</div>
+
+<div class="col py-3">
+
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+          <li class="breadcrumb-item active"><%= sites.SiteName  %></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col text-end fw-lighter">
+      <b>Last Updated <%= new Date(sites.updatedAt).toUTCString() %> </b>
+      <b>Site id:</b> <%= sites._id %>
+    </div>
+  </div>
+
+</div>
+
+<ul class="list-group">
+
+  <li class="list-group-item"> 
+    <div class="row">
+      <div class="col" style="max-width: 140px"> <b>SiteNumber:</b></div>
+      <div class="col"><%= sites.SiteNumber %></div>
+    </div>
+  </li>
+   <li class="list-group-item"> 
+    <div class="row">
+      <div class="col" style="max-width: 140px"> <b>Sitename:</b></div>
+      <div class="col"><%= sites.SiteName %></div>
+    </div>
+  </li>
+   <li class="list-group-item"> 
+    <div class="row">
+      <div class="col" style="max-width: 140px"> <b>SiteLocation:</b></div>
+      <div class="col"><%= sites.SiteLocation %></div>
+    </div>
+  </li>
+
+  <!-- <li class="list-group-item"> 
+    <div class="row">
+      <div class="col" style="max-width: 140px"> <b>Truck Number</b></div>
+      <div class="col"><%= sites.TruckNo %></div>
+    </div>
+  </li>
+
+  <li class="list-group-item"> 
+    <div class="row">
+      <div class="col" style="max-width: 140px"> <b>Material</b></div>
+      <div class="col"><%= sites.Material %></div>
+    </div>
+  </li> -->
+
+  <li class="list-group-item"> 
+    <div class="row">
+      <div class="col" style="max-width: 140px"> <b>Details:</b></div>
+      <div class="col"><%= sites.details %></div>
+    </div>
+  </li>
+
+  <li class="list-group-item"> 
+    <div class="row">
+      <div class="col" style="max-width: 140px"> <b>Date Created:</b></div>
+      <div class="col"><%= sites.createdAt %></div>
+    </div>
+  </li>
+
+  <li class="list-group-item"> 
+    <div class="row">
+      <div class="col" style="max-width: 140px"> <b>Date Modified:</b></div>
+      <div class="col"><%= sites.updatedAt %></div>
+    </div>
+  </li>
+
+</ul>

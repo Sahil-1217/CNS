@@ -1,0 +1,82 @@
+<div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Customer</h1>
+  <div class="btn-toolbar mb-2 mb-md 0">
+    <div class="btn-group me-2">
+      <button class="btn btn-sm btn-outline-secondary">?</button>
+    </div>
+  </div>
+</div>
+
+<div class="col py-3">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+          <li class="breadcrumb-item active">New Site</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col text-end fw-lighter">
+      <b>UserId</b>
+    </div>
+  </div>
+
+</div>
+
+
+<form action="/add" method="POST">
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="SiteNumber">Site Number</label>
+      <input type="text" class="form-control" id="SiteNumber" name="SiteNumber" value="" placeholder="Site number" required>
+    </div>
+
+  </div>
+
+<div class="row form-group mb-4">
+    <div class="col">
+      <label for="SiteName">Site Name</label>
+      <input type="text" class="form-control" id="SiteName" name="SiteName" value="" placeholder="Site Name" required>
+    </div>
+
+    <div class="col">
+      <label for="SiteLocation">site location</label>
+      <input type="text" class="form-control" id="SiteLocation" name="SiteLocation" value="" placeholder="site location " required>
+    </div>
+  </div>
+
+  <!-- <div class="row form-group mb-4">
+    <div class="col">
+      <label for="TruckNo">truck no</label>
+      <input type="text" class="form-control" id="TruckNo" name="TruckNo" value="" placeholder="Truck number" required>
+    </div>
+
+    <div class="col">
+      <label for="Material">material</label>
+      <input type="text" class="form-control" id="Material" name="Material" value="" placeholder="material" required>
+    </div>
+  </div> -->
+
+   <div class="row form-group mb-4">
+      <label for="SiteManger">Site Manger Name</label>
+      <input type="text" class="form-control" id="SiteManger" name="SiteManger" value="" placeholder="manager name" required>
+    </div>
+
+
+   <div class="row form-group mb-4">
+      <label for="details">Details</label>
+      <input type="text" class="form-control" id="details" name="details" value="" placeholder="Details" required>
+    </div>
+  
+
+     <div class="form-group mb-4">
+       <button type="submit" class="btn btn-primary">Add </button>
+     </div>
+  </div>
+
+</div>
+  
+
+</form>

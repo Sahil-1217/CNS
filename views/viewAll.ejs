@@ -1,0 +1,89 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2"><%= material.Material %></h1>
+<form>
+  <div class="col py-3">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Material information of sites</a></li>
+            <li class="breadcrumb-item active"><%= material.Material %></li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col text-end fw-lighter">
+        <b>Last Updated <%= new Date(material.updatedAt).toUTCString() %></b>
+        <b>Site id:</b> <%= material._id %>
+      </div>
+    </div>
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="max-width: 140px"><b>Site number:</b></div>
+        <div class="col"><%= material.SiteNumber1 %></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="max-width: 140px"><b>Material:</b></div>
+        <div class="col"><%= material.Material %></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="max-width: 140px"><b>Truck Number:</b></div>
+        <div class="col"><%= material.TruckNo1 %></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="max-width: 140px"><b>Cost</b></div>
+        <div class="col"><%= material.Cost %></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="max-width: 140px"><b>DealerName</b></div>
+        <div class="col"><%= material.DealerName %></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="max-width: 140px"><b>Quantity:</b></div>
+        <div class="col"><%= material.Quantity %></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="max-width: 140px"><b>Details:</b></div>
+        <div class="col"><%= material.details %></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="max-width: 140px"><b>Site Manger:</b></div>
+        <div class="col"><%= material.SiteManger1 %></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="max-width: 140px"><b>Date Created:</b></div>
+        <div class="col"><%= material.createdAt %></div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="max-width: 140px"><b>Date Modified:</b></div>
+        <div class="col"><%= material.updatedAt %></div>
+      </div>
+    </li>
+  </ul>
+</form>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Viewall site</h1>
+</div>
+
+

@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Attendance Records for Site ID <%= site_id %></h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Skill</th>
+      <th>Payable</th>
+      <th>Gender</th>
+      <th>Time In</th>
+      <th>Time Out</th>
+      <th>Hours Worked</th>
+      <th>Date Created</th>
+      <th>Date Modified</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% attendanceRecords.forEach(record => { %>
+      <tr class="align-middle">
+        <td><%= record.site_id %></td>
+        <td><%= record.name %></td>
+        <td><%= record.skill %></td>
+        <td><%= record.payable %></td>
+        <td><%= record.gender %></td>
+        <td><%= new Date(record.time_in).toLocaleTimeString() %></td>
+        <td><%= new Date(record.time_out).toLocaleTimeString() %></td>
+        <td><%= record.hours_worked %></td>
+        <td><%= new Date(record.createdAt).toLocaleString() %></td>
+        <td><%= new Date(record.updatedAt).toLocaleString() %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

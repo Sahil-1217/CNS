@@ -1,0 +1,148 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Add Labor Records</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group me-2">
+      <button class="btn btn-sm btn-outline-secondary">?</button>
+    </div>
+  </div>
+</div>
+
+<div class="col py-3">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+          <li class="breadcrumb-item active">Add Labor Records</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col text-end fw-lighter">
+      <b>UserId</b>
+    </div>
+  </div>
+</div>
+
+<form action="/add_attendance" method="POST" id="labor">
+  <div class="form-group mb-4">
+    <label for="site_id">SITE ID</label>
+    <input type="text" class="form-control" id="site_id" name="site_id" placeholder="Site ID" required>
+  </div>
+  
+
+  <div id="laborContainer">
+    <div class="labor-group mb-4">
+      <h5>Labor Record 1</h5>
+      <div class="row form-group mb-4">
+        <div class="col">
+          <label for="name_1">Name</label>
+          <input type="text" class="form-control" id="name_1" name="labor[0][name]" placeholder="Name" required>
+        </div>
+        <div class="col">
+          <label for="skill_1">Skill</label>
+          <input type="text" class="form-control" id="skill_1" name="labor[0][skill]" placeholder="Skill" required>
+        </div>
+        <div class="col">
+          <label for="payable_1">Payable</label>
+          <input type="number" class="form-control" id="payable_1" name="labor[0][payable]" placeholder="Payable" required>
+        </div>
+        <div class="col">
+          <label for="gender_1">Gender</label>
+          <select class="form-control" id="gender_1" name="labor[0][gender]" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="row form-group mb-4">
+        <div class="col">
+          <label for="time_in_1">Time In</label>
+          <input type="time" class="form-control" id="time_in_1" name="labor[0][time_in]" required>
+        </div>
+        <div class="col">
+          <label for="time_out_1">Time Out</label>
+          <input type="time" class="form-control" id="time_out_1" name="labor[0][time_out]" required>
+        </div>
+        <div class="col">
+          <label for="hours_worked_1">Hours Worked</label>
+          <input type="number" class="form-control" id="hours_worked_1" name="labor[0][hours_worked]" placeholder="Hours Worked" min="0" max="24" required>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group mb-4">
+    <button type="button" class="btn btn-secondary" id="addLaborBtn">+ Add Another Labor Record</button>
+  </div>
+
+  <div class="form-group mb-4">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+<script>
+  let laborCount = 1;
+
+  document.getElementById('addLaborBtn').addEventListener('click', () => {
+    laborCount++;
+    const laborContainer = document.getElementById('laborContainer');
+
+    const newLaborGroup = document.createElement('div');
+    newLaborGroup.classList.add('labor-group', 'mb-4');
+    newLaborGroup.innerHTML = `
+      <h5>Labor Record ${laborCount}</h5>
+      <div class="row form-group mb-4">
+        <div class="col">
+          <label for="name_${laborCount}">Name</label>
+          <input type="text" class="form-control" id="name_${laborCount}" name="labor[${laborCount - 1}][name]" placeholder="Name" required>
+        </div>
+        <div class="col">
+          <label for="skill_${laborCount}">Skill</label>
+          <input type="text" class="form-control" id="skill_${laborCount}" name="labor[${laborCount - 1}][skill]" placeholder="Skill" required>
+        </div>
+        <div class="col">
+          <label for="payable_${laborCount}">Payable</label>
+          <input type="number" class="form-control" id="payable_${laborCount}" name="labor[${laborCount - 1}][payable]" placeholder="Payable" required>
+        </div>
+        <div class="col">
+          <label for="gender_${laborCount}">Gender</label>
+          <select class="form-control" id="gender_${laborCount}" name="labor[${laborCount - 1}][gender]" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="row form-group mb-4">
+        <div class="col">
+          <label for="time_in_${laborCount}">Time In</label>
+          <input type="time" class="form-control" id="time_in_${laborCount}" name="labor[${laborCount - 1}][time_in]" required>
+        </div>
+        <div class="col">
+          <label for="time_out_${laborCount}">Time Out</label>
+          <input type="time" class="form-control" id="time_out_${laborCount}" name="labor[${laborCount - 1}][time_out]" required>
+        </div>
+        <div class="col">
+          <label for="hours_worked_${laborCount}">Hours Worked</label>
+          <input type="number" class="form-control" id="hours_worked_${laborCount}" name="labor[${laborCount - 1}][hours_worked]" placeholder="Hours Worked" min="0" max="24" required>
+        </div>
+      </div>
+    `;
+    laborContainer.appendChild(newLaborGroup);
+  });
+
+  document.getElementById('labor').addEventListener('submit', function(event) {
+    const laborGroups = document.querySelectorAll('.labor-group');
+    for (const group of laborGroups) {
+      const timeIn = group.querySelector('input[name$="[time_in]"]').value;
+      const timeOut = group.querySelector('input[name$="[time_out]"]').value;
+
+      if (timeOut <= timeIn) {
+        alert('Time Out should be greater than Time In');
+        event.preventDefault();
+        return;
+      }
+    }
+  });
+</script>
